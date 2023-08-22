@@ -63,6 +63,7 @@ jobs:
           # GITHUB_TOKEN seems to only allow access to packages of the same repo,
           # here we (may) need packages from multiple repos
           BUNDLE_RUBYGEMS__PKG__GITHUB__COM: ${{ secrets.GHP_READ_API_KEY }}
+          BUNDLE_WITHOUT: profile
 
       - run: echo "{RUBYOPT}={--enable-frozen-string-literal}" >> $GITHUB_ENV
         if: ${{ matrix.frozen-string }}
